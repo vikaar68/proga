@@ -78,7 +78,7 @@ public:
         
         file >> width >> height >> maxVal;
         
-        // Пропускаем один байт после заголовка для P5
+        //Пропускаем один байт после заголовка для P5
         if (magicNumber == "P5") {
             file.get();
         }
@@ -86,14 +86,14 @@ public:
         pixels.resize(height, std::vector<int>(width));
         
         if (magicNumber == "P2") {
-            // Текстовый формат P2
+            //Текстовый формат P2
             for (int i = 0; i < height; ++i) {
                 for (int j = 0; j < width; ++j) {
                     if (!(file >> pixels[i][j])) return false;
                 }
             }
         } else if (magicNumber == "P5") {
-            // Бинарный формат P5
+            //Бинарный формат P5
             for (int i = 0; i < height; ++i) {
                 for (int j = 0; j < width; ++j) {
                     unsigned char pixel;
