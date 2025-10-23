@@ -111,7 +111,7 @@ public:
         std::ofstream file(filename);
         if (!file.is_open()) return false;
         
-        // Сохраняем в текстовом формате P2 для простоты
+        //Сохраняем в текстовом формате P2 для простоты
         file << "P2\n" << width << " " << height << "\n" << maxVal << "\n";
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < width; ++j) {
