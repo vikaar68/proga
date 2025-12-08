@@ -29,7 +29,7 @@ public:
         return data.size();
     }
     
-    // Сеттер с проверкой для числовых типов
+    // Сеттер с проверкой
     template<typename U = T>
     typename std::enable_if<std::is_arithmetic<U>::value, void>::type
     setChecked(size_t index, U value) {
